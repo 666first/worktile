@@ -31,7 +31,34 @@ const routes = [
   {
     path: '/meshdisk',
     name: 'meshdisk',
-    component: () => import(/* webpackChunkName: "meshdisk" */ '../views/meshdisk')
+    component: () => import(/* webpackChunkName: "meshdisk" */ '../views/meshdisk'),
+    children: [
+      {
+        path: '/meshdisk/',
+        name: 'qiye',
+        component: require('../views/meshdisk/children/index.vue').default
+      }, {
+        path: '/meshdisk/geren',
+        name: 'geren',
+        component: require('../views/meshdisk/children/geren.vue').default
+      }, {
+        path: '/meshdisk/chengyuan',
+        name: 'chengyaun',
+        component: require('../views/meshdisk/children/chengyuan.vue').default
+      }, {
+        path: '/meshdisk/biaoqian',
+        name: 'biaoqian',
+        component: require('../views/meshdisk/children/biaoqian.vue').default
+      }, {
+        path: '/meshdisk/gongxiang',
+        name: 'gongxiang',
+        component: require('../views/meshdisk/children/gongxiang.vue').default
+      }, {
+        path: '/meshdisk/huishou',
+        name: 'huishou',
+        component: require('../views/meshdisk/children/huishou.vue').default
+      }
+    ]
   },
   {
     path: '/briefing',
