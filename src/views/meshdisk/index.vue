@@ -2,16 +2,20 @@
   <div>
     <div id="nav">
       <h3 class="headtitle">网盘</h3>
-      <div class="inputbox"><input type="text"
-               placeholder="搜索文件、文件夹"></div>
-      <router-link to="/meshdisk">企业网盘</router-link>
-      <router-link to="/meshdisk/geren">个人网盘</router-link>
+      <div class="inputbox">
+        <input type="text" placeholder="搜索文件、文件夹" />
+      </div>
+      <router-link to="/meshdisk">
+        <i class="el-icon-folder"></i>企业网盘
+      </router-link>
+      <router-link to="/meshdisk/geren">
+        <i class="el-icon-folder"></i>个人网盘
+      </router-link>
       <router-link to="/meshdisk/chengyuan">成员</router-link>
       <router-link to="/meshdisk/biaoqian">标签</router-link>
       <router-link to="/meshdisk/gongxiang">与我共享</router-link>
     </div>
     <router-view class="xianshi" />
-
   </div>
 </template>
 
@@ -79,5 +83,8 @@ export default {
   color: #22d7bb;
   background: rgba($color: #22d7bb, $alpha: 0.2);
   border-right: 3px solid #22d7bb;
+}
+.el-icon-folder {
+  color: #22d7bb;
 }
 </style>
