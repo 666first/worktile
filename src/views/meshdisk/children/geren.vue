@@ -1,10 +1,15 @@
 <template>
   <div>
     <div class="header">
-      <div class="hleft">个人网盘</div>
+      <div class="hleft">
+        <i class="el-icon-folder"></i>个人网盘
+      </div>
       <div class="hright">
-        <div><b>+</b>新建</div>
-        <div>上传文件</div><span>↓</span>
+        <div>
+          <b>+</b>新建
+        </div>
+        <div>上传文件</div>
+        <span>↓</span>
       </div>
     </div>
   </div>
@@ -60,6 +65,9 @@ export default {};
       line-height: 20px;
       border-radius: 0 50% 50% 0;
     }
+  }
+  .el-icon-folder {
+    color: #f969aa;
   }
 }
 </style>

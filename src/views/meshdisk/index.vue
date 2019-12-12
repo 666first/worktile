@@ -5,7 +5,10 @@
       <div class="inputbox">
         <input type="text" placeholder="搜索文件、文件夹" />
       </div>
-      <router-link to="/meshdisk">
+
+      <el-tree :data="data" :props="defaultProps" accordion @node-click="handleNodeClick"></el-tree>
+
+      <!-- <router-link to="/meshdisk">
         <i class="el-icon-folder"></i>企业网盘
       </router-link>
       <router-link to="/meshdisk/geren">
@@ -13,7 +16,7 @@
       </router-link>
       <router-link to="/meshdisk/chengyuan">成员</router-link>
       <router-link to="/meshdisk/biaoqian">标签</router-link>
-      <router-link to="/meshdisk/gongxiang">与我共享</router-link>
+      <router-link to="/meshdisk/gongxiang">与我共享</router-link>-->
     </div>
     <router-view class="xianshi" />
   </div>
@@ -21,18 +24,156 @@
 
 <script>
 export default {
+  data() {
+    return {
+      data: [
+        {
+          label: (
+            <router-link to="/meshdisk">
+              <i class="el-icon-folder"></i>企业网盘
+            </router-link>
+          ),
+          children: [
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 1-1-1"
+                }
+              ]
+            },
+            {
+              label: "资料共享",
+              children: [
+                {
+                  label: "三级 1-1-1"
+                }
+              ]
+            },
+            {
+              label: "公司照片",
+              children: [
+                {
+                  label: "三级 1-1-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label: (
+            <router-link to="/meshdisk/geren">
+              <i class="el-icon-folder"></i>个人网盘
+            </router-link>
+          ),
+          children: [
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 2-1-1"
+                }
+              ]
+            },
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 2-2-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label: <router-link to="/meshdisk/chengyuan">成员</router-link>,
+          children: [
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 3-1-1"
+                }
+              ]
+            },
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 3-2-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label: <router-link to="/meshdisk/biaoqian">标签</router-link>,
+          children: [
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 3-1-1"
+                }
+              ]
+            },
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 3-2-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label: <router-link to="/meshdisk/gongxiang">与我共享</router-link>,
+          children: [
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 3-1-1"
+                }
+              ]
+            },
+            {
+              label: "公司制度",
+              children: [
+                {
+                  label: "三级 3-2-1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      defaultProps: {
+        children: "children",
+        label: "label"
+      }
+    };
+  },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    // handleOpen(key, keyPath) {
+    //   console.log(key, keyPath);
+    // },
+    // handleClose(key, keyPath) {
+    //   console.log(key, keyPath);
+    // }
+    handleNodeClick(data) {
+      console.log(data);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.el-tree-node__label {
+  font-size: 14px;
+  width: 100%;
+}
 #nav {
   .headtitle {
     padding-left: 20px;
