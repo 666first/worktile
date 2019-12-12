@@ -1,10 +1,8 @@
 <template>
   <div>
     <div class="header">
-      <div class="hleft">企业网盘</div>
-      <div class="hright">
-        <div>+新建</div>
-        <div>上传</div>
+      <div class="hleft">
+        <i class="el-icon-folder"></i>企业网盘
       </div>
     </div>
   </div>
@@ -23,6 +21,9 @@ export default {};
   height: 50px;
   .hright {
     display: flex;
+  }
+  .el-icon-folder {
+    color: #22d7bb;
   }
 }
 </style>
